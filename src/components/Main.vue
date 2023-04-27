@@ -1,6 +1,13 @@
 <script>
-export default {
+import Cta from "./Cta.vue"
 
+export default {
+  name : "Main",
+
+  components : {
+    Cta,
+  }
+  
 }
 </script>
 
@@ -10,6 +17,7 @@ export default {
       <h1> [ Content goes here ] </h1>
     </div>
   </main>
+  <Cta/>
 </template>
 
 <style lang="scss">

@@ -2,9 +2,11 @@
 import { headerMenu } from "../data/menus";
 
 export default {
+  name: "Header",
+
   data() {
     return {
-      logo : "../assets/img/dc-logo.png",
+      logo : "./src/assets/img/dc-logo.png",
       headerMenu,
       activeLink : null,
     }
@@ -17,13 +19,13 @@ export default {
     <div class="container">
 
       <div class="logo">
-        <img src="../assets/img/dc-logo.png" alt="Logo DC">
+        <img :src="logo" alt="Logo DC">
       </div>
   
       <nav>
         <ul>
           <li v-for="(link, index) in headerMenu" :key="index"> 
-            <a @click="activeLink = index" class="fs-md fw-medium" :class="{'active' : index === activeLink}" :href="link.href">{{ link.text }}</a>
+            <a @click="activeLink = index" class="fs-sm fw-medium" :class="{'active' : index === activeLink}" :href="link.href">{{ link.text }}</a>
           </li>
         </ul>
       </nav>

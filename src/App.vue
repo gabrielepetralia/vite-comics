@@ -4,7 +4,7 @@ import Main from "./components/Main.vue"
 import Footer from "./components/Footer.vue"
 
 export default {
-  name : 'App',
+  name: "App",
 
   components : {
     Header,
@@ -17,6 +17,7 @@ export default {
 <template>
     <Header/>
     <Main/>
+    <Cta/>
     <Footer/>
 </template>
 
