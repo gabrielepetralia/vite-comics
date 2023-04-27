@@ -1,0 +1,45 @@
+@use "./variables" as *;
+
+body {
+  font-family: $primary-font;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.fs {
+  &-sm {
+    font-size : 0.6rem;
+  }
+
+  &-md {
+    font-size : 0.85rem;
+  }
+
+  &-lg {
+    font-size : 2rem;
+  } 
+}
+
+.fw {
+  &-light {
+    font-weight: 300;
+  }
+
+  &-regular {
+    font-weight: 400;
+  }
+
+  &-medium {
+    font-weight: 500;
+  }
+
+  &-semibold {
+    font-weight: 600;
+  }
+}
