@@ -6,9 +6,15 @@ export default {
 
   data() {
     return {
-      logo : "./src/assets/img/dc-logo.png",
+      logo : "dc-logo.png",
       headerMenu,
       activeLink : null,
+    }
+  },
+
+  methods : {
+    getImage(img) {
+      return new URL(`../assets/img/${img}`, import.meta.url).href
     }
   }
 }
@@ -19,7 +25,7 @@ export default {
     <div class="container">
 
       <div class="logo">
-        <img :src="logo" alt="Logo DC">
+        <img :src="getImage(logo)" alt="Logo DC">
       </div>
   
       <nav>

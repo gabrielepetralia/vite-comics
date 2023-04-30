@@ -8,6 +8,12 @@ export default {
     return {
       ctaMenu,
     }
+  },
+
+  methods : {
+    getImage(img) {
+      return new URL(`../assets/img/${img}`, import.meta.url).href
+    }
   }
 }
 </script>
@@ -18,7 +24,7 @@ export default {
       <ul>
         <li v-for="(link, index) in ctaMenu" :key="index">
           <div class="icon">
-            <img :src="link.icon">
+            <img :src="getImage(link.icon)">
           </div>
           <a @click="activeLink = index" class="fs-md fw-regular" :class="{ 'active': index === activeLink }"
             :href="link.href">{{ link.text }}</a>
@@ -58,7 +64,6 @@ export default {
           text-transform: uppercase;
           color: white;
           padding-left : 18px;
-          border-bottom: 5px solid transparent;
 
           &:hover {
             text-decoration: underline;

@@ -14,7 +14,7 @@ li {
 
 .fs {
   &-xs {
-    font-size: 0.7rem;
+    font-size : 0.8rem;
   }
 
   &-sm {
@@ -26,7 +26,11 @@ li {
   }
 
   &-lg {
-    font-size : 2rem;
+    font-size : 1.2rem;
+  } 
+
+  &-xl {
+    font-size : 1.4rem;
   } 
 }
 
