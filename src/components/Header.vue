@@ -54,6 +54,10 @@ export default {
       .logo {
         height : 100%;
         padding : 20px 0;
+
+        img {
+          max-height: 100%;
+        }
       }
   
       nav {

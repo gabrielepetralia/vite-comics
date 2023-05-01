@@ -1,16 +1,20 @@
 <script>
 import Cta from "./Cta.vue"
+import Card from "./partials/Card.vue"
+import dcBooks from "../data/dc-comics.json"
 
 export default {
   name : "Main",
 
   components : {
     Cta,
+    Card,
   },
 
   data() {
     return {
       jumbotronImage : "jumbotron.jpg",
+      dcBooks,
     }
   },
 
@@ -30,7 +34,20 @@ export default {
     </div>
     <div class="container">
       <h1 class="fs-xxl">Current Series</h1>
-      <h2> [ Content goes here ] </h2>
+
+      <div class="cards-container">
+        <Card
+          v-for="(book, index) in dcBooks"
+          :key = "index"
+          :thumb = "book.thumb"
+          :series = "book.series"
+        />  
+      </div>
+
+      <div class="load">
+        <button class="fs-xs fw-semibold">Load More</button>
+      </div>
+      
     </div>
   </main>
   <Cta/>
@@ -38,6 +55,7 @@ export default {
 
 <style lang="scss">
   @use "../scss/partials/variables" as *;
+  @use "../scss/partials/mixin" as *;
 
   main {
     background-color: #1c1c1c;
@@ -50,7 +68,7 @@ export default {
     .container {
       position: relative;
       color : white;
-      padding : 50px 0;
+      padding : 60px 0 20px;
 
       h1 {
         position: absolute;
@@ -61,6 +79,28 @@ export default {
         color : white;
         background-color : $primary-color;
         padding: 10px 30px;
+      }
+
+      .cards-container {
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      .load {
+        @include centerFlex("horizontal");
+
+        button {
+          text-transform: uppercase;
+          color: white;
+          background-color: $primary-color;
+          border: none;
+          padding: 12px 55px;
+
+          &:hover {
+            cursor: pointer;
+            transform: scale(1.1);
+          }
+        }
       }
     }
   }

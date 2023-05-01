@@ -52,6 +52,10 @@ export default {
         .icon {
           @include centerFlex("both");
           height: 55px;
+
+          img {
+            max-height: 100%;
+          }
         }
 
         &:last-child {

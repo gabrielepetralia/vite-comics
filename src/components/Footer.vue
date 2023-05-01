@@ -41,7 +41,7 @@ export default {
     <div class="container">
       <button class="sign-up fs-md fw-semibold">Sign-Up Now!</button>
       <div class="socials">
-        <h4 class="fs-xl">Follow Us</h4>
+        <h3 class="fs-xl">Follow Us</h3>
         <ul>
           <li v-for="(social, index) in socialsMenu" :key="index">
             <a :href="social.href"><img class="social-logo" :src="getImage(social.image)" :alt="social.name"></a>
@@ -126,7 +126,7 @@ export default {
       .socials {
         display: flex;
         align-content: baseline;
-        h4 {
+        h3 {
           color: $primary-color;
           text-transform: uppercase;
           margin-right: 10px;
@@ -137,6 +137,10 @@ export default {
 
           li {
             margin-left: 20px;
+
+            a:hover img {
+              transform: scale(1.1);
+            }
           }
         }
       }
